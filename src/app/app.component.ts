@@ -26,12 +26,18 @@ export class AppComponent implements OnInit {
     this.oidcSecurityService
       .checkAuth()
       .pipe(delay(100))
-      .subscribe(({ isAuthenticated, accessToken }) => {
-        console.log('app authenticated', isAuthenticated);
-        console.log(`Current access token is '${accessToken}'`);
-        this.isAuthenticated = isAuthenticated;
-        this.autoLogin();
-        this.initialized = true;
+      .subscribe({
+        next: ({ isAuthenticated, accessToken }) => {
+          console.log('app authenticated:', isAuthenticated);
+          console.log(`Current access token is: '${accessToken}'`);
+          this.isAuthenticated = isAuthenticated;
+          this.autoLogin();
+          this.initialized = true;
+        },
+        error: () => {
+          this.autoLogin();
+          this.initialized = true;
+        },
       });
   }
 

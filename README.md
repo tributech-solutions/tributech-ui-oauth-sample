@@ -1,6 +1,6 @@
 # tributech-ui-oauth-sample
-Tributech sample frontend project which simply handles the OAuth Flow with our Identity Provider
 
+Tributech sample frontend project which simply handles the OAuth Flow with our Identity Provider
 
 ## Create Docker Image
 
@@ -14,7 +14,6 @@ Tributech sample frontend project which simply handles the OAuth Flow with our I
 
 Open <https://localhost:4200/>
 
-## Auth Config:
+## OAuth Config
 
 `src/app/app.config.ts`
-
