@@ -1,0 +1,25 @@
+<main class="p-8">
+  @if (initialized) {
+    <section class="space-y-4">
+      @if (isAuthenticated) {
+        <button
+          (click)="logout()"
+          class="border bg-primary-900 text-white hover:bg-primary-800 px-4 py-2 rounded"
+        >
+          Logout
+        </button>
+      }
+      @if (!isAuthenticated) {
+        <button
+          (click)="login()"
+          class="border bg-primary-900 text-white hover:bg-primary-800 px-4 py-2 rounded"
+        >
+          Login
+        </button>
+      }
+
+      <div>Is Authenticated: {{ isAuthenticated }}</div>
+    </section>
+  }
+  <router-outlet></router-outlet>
+</main>
