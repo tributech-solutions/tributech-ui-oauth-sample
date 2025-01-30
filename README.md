@@ -16,4 +16,5 @@ Open <https://localhost:4200/>
 
 ## OAuth Config
 
-`src/app/app.config.ts`
+Config: `src/app/app.config.ts`
+Environment Variables: `src/environments/environment.ts`
